@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <canvas id="canvas" width="600" height="400" style="border: 1px solid gray "></canvas>
+    <script>
+        function $$ (id) {
+            return document.getElementById(id)
+        }
+        window.onload = function () {
+            var cnv = $$('canvas')
+            var cxt = cnv.getContext('2d')
+
+            //半圆
+            cxt.beginPath()
+            cxt.arc(80, 80, 50, 0, 180*Math.PI/180, true)
+            cxt.closePath()
+            cxt.strokeStyle = 'HotPink'
+            cxt.stroke()
+
+            //画圆
+            cxt.beginPath()
+            cxt.arc(200, 200, 50, 0, 360*Math.PI/180, true)
+            cxt.closePath()
+            cxt.strokeStyle = 'HotPink'
+            cxt.stroke()
+
+            //画一个闭合的弧
+            cxt.beginPath()
+            cxt.arc(300, 300, 50, 0, 90*Math.PI/180, true)
+            cxt.closePath()
+            cxt.strokeStyle = 'HotPink'
+            cxt.stroke()
+            cxt.fillStyle = 'Black'
+            cxt.fill()
+
+            cxt.beginPath()
+            cxt.arc(100, 250, 50, 0, 90*Math.PI/180, false)
+            cxt.closePath()
+            cxt.strokeStyle = 'HotPink'
+            cxt.stroke()
+        }
+    </script>
+</body>
+</html>
